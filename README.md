@@ -2,10 +2,9 @@
 
 -npm install
 
--npx json-server server.json -d 1000 -w
 
 -expo run:android
-
+-npx json-server server.json -d 1000 -w
 -adb reverse tcp:3000 tcp:3000
 
 
