@@ -1,0 +1,166 @@
+{
+  "feed": [
+    {
+      "id": 1,
+      "image": "https://mega.ibxk.com.br/2021/04/09/09201638074393.jpg?ims=610x",
+      "small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/1.jpeg",
+      "description": "Bora lavar a louça gente!",
+      "authorId": 1
+    },
+    {
+      "id": 2,
+      "image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/2.jpeg",
+      "small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/2.jpeg",
+      "description": "Code, code and more code!",
+      "authorId": 2
+    },
+    {
+      "id": 3,
+      "image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/3.jpeg",
+      "small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/3.jpeg",
+      "description": "Rocketships fly away!",
+      "authorId": 3
+    },
+    {
+      "id": 4,
+      "image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/4.jpeg",
+      "small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/4.jpeg",
+      "description": "3, 2, 1, ready to launch!",
+      "authorId": 4
+    },
+    {
+      "id": 5,
+      "image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/5.jpeg",
+      "small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/5.jpeg",
+      "description": "Code, code and more code!",
+      "authorId": 2
+    },
+    {
+      "id": 6,
+      "image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/6.jpeg",
+      "small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/6.jpeg",
+      "description": "Node.js + ReactJS + React Native = <3",
+      "authorId": 3
+    },
+    {
+      "id": 7,
+      "image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/7.jpeg",
+      "small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/7.jpeg",
+      "description": "OmniStack to the rescue!",
+      "authorId": 1
+    },
+    {
+      "id": 8,
+      "image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/8.jpeg",
+      "small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/8.jpeg",
+      "description": "Rocketseat is cool!",
+      "authorId": 2
+    },
+    {
+      "id": 9,
+      "image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/9.jpeg",
+      "small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/9.jpeg",
+      "description": "Have you watched our videos at YouTube?",
+      "authorId": 4
+    },
+    {
+      "id": 10,
+      "image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/10.jpeg",
+      "small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/10.jpeg",
+      "description": "Code, code and more code!",
+      "authorId": 3
+    },
+    {
+      "id": 11,
+      "image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/11.jpeg",
+      "small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/11.jpeg",
+      "description": "Developing new great app!",
+      "authorId": 1
+    },
+    {
+      "id": 12,
+      "image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/12.jpeg",
+      "small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/12.jpeg",
+      "description": "Let's code everyday!",
+      "authorId": 3
+    },
+    {
+      "id": 13,
+      "image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/4.jpeg",
+      "small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/4.jpeg",
+      "description": "Sleep, eat, code, repeat!",
+      "authorId": 2
+    },
+    {
+      "id": 14,
+      "image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/5.jpeg",
+      "small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/5.jpeg",
+      "description": "Working hard at Rocketseat!",
+      "authorId": 4
+    },
+    {
+      "id": 15,
+      "image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/3.jpeg",
+      "small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/3.jpeg",
+      "description": "Code, code and more code!",
+      "authorId": 4
+    },
+    {
+      "id": 16,
+      "image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/2.jpeg",
+      "small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/2.jpeg",
+      "description": "Just studying some React Native stuff!",
+      "authorId": 3
+    },
+    {
+      "id": 17,
+      "image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/1.jpeg",
+      "small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/1.jpeg",
+      "description": "React Native is such a great tool by Facebook!",
+      "authorId": 2
+    },
+    {
+      "id": 18,
+      "image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/8.jpeg",
+      "small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/8.jpeg",
+      "description": "Love what you do, do what you love!",
+      "authorId": 1
+    },
+    {
+      "id": 19,
+      "image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/7.jpeg",
+      "small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/7.jpeg",
+      "description": "Code, code and more code!",
+      "authorId": 2
+    },
+    {
+      "id": 20,
+      "image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/6.jpeg",
+      "small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/6.jpeg",
+      "description": "Are you working for your dreams?",
+      "authorId": 1
+    }
+  ],
+  "authors": [
+    {
+      "id": 1,
+      "name": "Edimundo_jr",
+      "avatar": "https://avatars0.githubusercontent.com/u/94170467?s=50&v=4"
+    },
+    {
+      "id": 2,
+      "name": "AnnaClara",
+      "avatar": "https://avatars0.githubusercontent.com/u/80119297?s=50&v=4"
+    },
+    {
+      "id": 3,
+      "name": "FancineSilva",
+      "avatar": "https://avatars2.githubusercontent.com/u/84914691?s=50&v=4"
+    },
+    {
+      "id": 4,
+      "name": "KemitaS",
+      "avatar": "https://avatars3.githubusercontent.com/u/80592803?s=50&v=4"
+    }
+  ]
+}
