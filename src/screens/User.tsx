@@ -1,76 +1,123 @@
 import { useState, useEffect } from 'react';
-import { Alert} from 'react-native';
-import auth from '@react-native-firebase/auth';
-import { useNavigation } from '@react-navigation/native';
-import { HStack, IconButton, VStack, useTheme, View, Image, Text, Center } from 'native-base';
-import { ArrowLeft, SignOut } from 'phosphor-react-native';
+import { Alert, FlatList, TouchableOpacity} from 'react-native';
+import {  VStack, useTheme,  Image, Text,  Row, Center, HStack } from 'native-base';
 
 
-import Logo from '../assets/logo_feed.svg'
+import { HeaderFeed } from '../components/headerFeed';
+import { FooterBar } from '../components/FooterBar';
+import { Header } from '../components/Header';
+import { useNavigation, useRoute } from '@react-navigation/native';
 
 
 export function User() {
-  const { colors } = useTheme();
+  const [feed, setFeed ] = useState([])
+  const [refreshing, setRefreshing] = useState(false)
+  const [loading, setLoading] = useState(false)
   const navigation = useNavigation();
+  
 
+  
+  
   const [user, setUser] = useState({
+
     "id": 1,
     "name": "Edimundo_Jr",
     "avatar": "https://avatars0.githubusercontent.com/u/94170467"
+    
   })
-
-
-  function handleGoBack() {
-    navigation.goBack();
+  async function carregarfeed(feedId = 1, shouldRefresh= false)  {
+    setLoading(true)
+    const response = await fetch(`http://localhost:3000/feed?&authorId=${feedId}`)
+    const data = await response.json()
+    
+    setFeed(shouldRefresh ? data : [...feed, ...data])
+  
+    setLoading(false)
   }
-
-  function handleLogout() {
-    auth()
-      .signOut()
-      .catch(error => {
-        console.log(error);
-        return Alert.alert('Sair', 'Não foi possível sair.');
-      });
+  
+  useEffect(()=>{
+        
+    refreshList()
+   },[])
+  
+   async function refreshList(){
+    setRefreshing(true)
+    await carregarfeed(1, true)
+    setRefreshing(false)
   }
+  
+ 
   return (
-     <VStack flex={1} pb={6} bg="gray.700">
-      <HStack
-        w="full"
-        justifyContent="space-between"
-        alignItems="center"
-        bg="gray.600"
-        pt={12}
-        pb={5}
-        px={6}
-      >
-        <IconButton
-          icon={<ArrowLeft
-            weight="thin"
-            size={26} 
-            color={colors.gray[300]}
-            />}
-           onPress={handleGoBack}
-        />
-        <Logo 
-        />
+     <VStack flex={1} p={6} pb={0}  bg="gray.600">
+     <Header
+     bg="gray.600"
+     title="Perfil do Usuário"/>
+     
+     <Center
+     bg="gray.600"
+     paddingBottom={5}
+     >
+      
+      
+      
+           
+      <Image 
+      marginBottom={5}
+      style={{width: 150, height:150, borderRadius:100, marginRight:10}}
+      alt="avatar"
+      source={{ uri: user.avatar }} />
 
-        <IconButton
-          icon={<SignOut size={26} color={colors.gray[300]} />}
-          onPress={handleLogout}
-        />
-      </HStack>
-      <Center>
-      <View 
-      marginTop={50}>
-              <Image style={{width: 100, height: 100, borderRadius:50, marginRight:10}}
-                     alt="avatar"
-            source={{ uri: user.avatar }} />
-            </View>
-            <Text 
-            color="gray.100"
-            style={{ fontWeight:"bold", fontSize:20}}>{user.name}</Text>
+      <Text 
+      
+      color="gray.100"
+      style={{ fontWeight:"bold", fontSize:20}}>{user.name}</Text>
+            
+      
       </Center>
+
+      <HStack
+      flex={1}
+      bg="gray.100"
+      borderTopRadius={30}
+     overflow="hidden"
+      >
+
+      
+      <FlatList
+      
+      data={feed}
+      keyExtractor={post => String(post.id)}
+      onRefresh={refreshList}
+      refreshing={refreshing}
+      numColumns={2}
+      renderItem={({ item }) => (
+        
+        <VStack marginTop={6}>
+         <TouchableOpacity 
+          onPress={()=>
+            
+            navigation.navigate('feedDetails',{feedId: item.id})}
+          >
+          <Image 
+          style={{width: 150, height: 150,borderRadius:10}}
+          marginLeft={4}
+          marginRight={4}
+          alt="imagem"
+          source={{ uri : item.image }} />
+          
+          </TouchableOpacity>
+          
+          
+          
+          
+
+        </VStack>
+        )}
+     
+      />
+      </HStack>
+      
     </VStack>
-   
+  
   );
 }

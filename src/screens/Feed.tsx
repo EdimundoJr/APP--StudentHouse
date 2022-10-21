@@ -1,20 +1,14 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { Alert } from 'react-native';
-import auth from '@react-native-firebase/auth';
 
-import { HStack,IconButton, VStack, useTheme, Image, FlatList, Text, Row,Center } from 'native-base';
+import {  VStack,  Image, FlatList, Text, Row} from 'native-base';
 import {   TouchableOpacity } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
-import {  SignOut, ArrowLeft, UserCircle, CurrencyDollar } from 'phosphor-react-native';
 
-
-
-import Logo from '../assets/logo_feed.svg';
-
-import LogoButton from '../assets/logo_buttom.svg';
 import { Loading } from '../components/Loading';
-import { NavigationEvents } from 'react-navigation';
+
+import { HeaderFeed } from '../components/headerFeed';
+import { FooterBar } from '../components/FooterBar';
 
 export function Feed() {
   const [feed, setFeed ] = useState([])
@@ -22,30 +16,10 @@ export function Feed() {
   const [total, setTotal ] = useState(0)
   const [loading, setLoading] = useState(false)
   const [refreshing, setRefreshing] = useState(false)
-  const { colors } = useTheme()
   const navigation = useNavigation();
 
-
-  function handlePayment() {
-    navigation.navigate('home')
-  }
-
-  
-  
-  function handleUser() {
-    navigation.navigate('user')
-    
-  }
-
-  function handleLogout() {
-    auth()
-      .signOut()
-      .catch(error => {
-        console.log(error);
-        return Alert.alert('Sair', 'Não foi possível sair.');
-      });
-  }
  
+  
   async function loadPage(pageNumber = page, shouldRefresh= false) {
     if(total && pageNumber > total) return
     
@@ -77,25 +51,9 @@ export function Feed() {
 
     
   return (
-    <VStack flex={1} bg="gray.100">
-     <HStack
-        w="full"
-        justifyContent="space-between"
-        alignItems="center"
-        bg="gray.600"
-        pt={12}
-        pb={5}
-        px={6}
-      >
-        <></>         
-         
-        <Logo />
-
-        <IconButton
-          icon={<SignOut size={26} color={colors.gray[300]} />}
-          onPress={handleLogout}
-        />
-      </HStack>
+    <VStack flex={1}  pb={0} bg="gray.100">
+      
+      <HeaderFeed/>
       
       <FlatList
       data={feed}
@@ -107,10 +65,13 @@ export function Feed() {
       refreshing={refreshing}
       renderItem={({ item }) => (
         
-        <VStack marginTop={6}>
+        <VStack 
+         
+          marginTop={6}>
           <Row
           padding={2}
-          alignItems="center"            
+          alignItems="center" 
+                    
           >
             <Image      
             style={{width: 50, height: 50, borderRadius:25, marginRight:10}}
@@ -128,6 +89,7 @@ export function Feed() {
             navigation.navigate('feedDetails',{feedId: item.id})}
           >
           <Image 
+      
           style={{width: 400, height: 400, borderBottomRightRadius:50,borderTopRightRadius:50,borderBottomLeftRadius:50, margin:5}}
           
           alt="imagem"
@@ -149,47 +111,8 @@ export function Feed() {
       />
       
         
-      <HStack
-      w="full"
-      justifyContent="space-between"
-      alignItems="center"           
-      bg="gray.600"
-      borderTopRadius={10}
-      
-      px={6}
-      
-      >
-        <IconButton
-          icon={<UserCircle
-            weight="thin"
-            size={36} 
-            color={colors.gray[300]}
-            />}
-           onPress={handleUser}
-        />
-       <LogoButton
-            
-            width={40}
-            height={40}
-          />    
-          
-      
-        <IconButton
-          icon={<CurrencyDollar
-            weight="thin"
-            size={36} 
-            color={colors.gray[300]}
-            
-            />}
-         onPress={handlePayment}
-          
-        />
-        
-
-        
-
-      </HStack>
-      
+      <FooterBar/>
+     
     </VStack>
   );
   

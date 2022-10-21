@@ -16,18 +16,13 @@ import { Filtter } from '../components/Filtter';
 import { Button } from '../components/Button';
 import { Loading } from '../components/Loading';
 import { Order, OrderProps } from '../components/Order';
+import { FooterBar } from '../components/FooterBar';
+import { HeaderFeed } from '../components/headerFeed';
 
 export function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const [statusSelected, setStatusSelected] = useState<'open' | 'closed'>('open');
-  const [orders, setOrders] = useState<OrderProps[]>([
-    {
-      id:'12345',
-      patrimony:'1312312',
-      when: '30/08/2022 ás 10:00',
-      status: 'closed'
-    }
-  ]);
+  const [orders, setOrders] = useState<OrderProps[]>([]);
 
   const navigation = useNavigation();
   const { colors } = useTheme();
@@ -36,23 +31,13 @@ export function Home() {
     navigation.navigate('new');
   }
 
-  function handleGoBack() {
-    navigation.goBack();
-  }
-
+ 
   
   function handleOpenDetails(orderId: string) {
     navigation.navigate('details', { orderId });
   }
 
-  function handleLogout() {
-    auth()
-      .signOut()
-      .catch(error => {
-        console.log(error);
-        return Alert.alert('Sair', 'Não foi possível sair.');
-      });
-  }
+
 
   useEffect(() => {
     setIsLoading(true);
@@ -81,32 +66,8 @@ export function Home() {
   }, [statusSelected]);
 
   return (
-    <VStack flex={1} pb={6} bg="gray.700">
-      <HStack
-        w="full"
-        justifyContent="space-between"
-        alignItems="center"
-        bg="gray.600"
-        pt={12}
-        pb={5}
-        px={6}
-      >
-        <IconButton
-          icon={<ArrowLeft
-            weight="thin"
-            size={26} 
-            color={colors.gray[300]}
-            />}
-           onPress={handleGoBack}
-        />
-        <Logo 
-        />
-
-        <IconButton
-          icon={<SignOut size={26} color={colors.gray[300]} />}
-          onPress={handleLogout}
-        />
-      </HStack>
+    <VStack flex={1}  bg="gray.700">
+      <HeaderFeed/>
 
       <VStack flex={1} px={6}>
         <HStack w="full" mt={8} mb={4} justifyContent="space-between" alignItems="center">
@@ -154,8 +115,10 @@ export function Home() {
             />
         }
 
-        <Button title="Nova Conta" onPress={handleNewOrder} />
+        <Button title="Nova Conta" onPress={handleNewOrder} marginBottom={3}/>
       </VStack>
+      <FooterBar/>
     </VStack>
+    
   );
 }
