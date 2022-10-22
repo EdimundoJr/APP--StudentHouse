@@ -17,7 +17,7 @@ import { Button } from '../components/Button';
 import { Loading } from '../components/Loading';
 import { Order, OrderProps } from '../components/Order';
 import { FooterBar } from '../components/FooterBar';
-import { HeaderFeed } from '../components/headerFeed';
+import { HeaderFeed } from '../components/HeaderFeed';
 
 export function Home() {
   const [isLoading, setIsLoading] = useState(true);

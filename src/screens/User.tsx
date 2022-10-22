@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react';
 import { Alert, FlatList, TouchableOpacity} from 'react-native';
-import {  VStack, useTheme,  Image, Text,  Row, Center, HStack } from 'native-base';
-
+import {  VStack, useTheme,  Image, Text,  Row, Center, HStack, Flex } from 'native-base';
+import { BlurView } from 'expo-blur';
 
 import { HeaderFeed } from '../components/headerFeed';
 import { FooterBar } from '../components/FooterBar';
 import { Header } from '../components/Header';
 import { useNavigation, useRoute } from '@react-navigation/native';
+import LinearGradient from 'react-native-linear-gradient';
 
 
 export function User() {
@@ -74,15 +75,21 @@ export function User() {
             
       
       </Center>
-
-      <HStack
-      flex={1}
-      bg="gray.100"
-      borderTopRadius={30}
-     overflow="hidden"
-      >
-
+      <BlurView
       
+            tint="light"
+            intensity={80}
+            style={{
+              
+              flex:1,
+              borderTopRightRadius:20,
+              borderTopLeftRadius:20,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}>
+            
+          
+            
       <FlatList
       
       data={feed}
@@ -97,14 +104,21 @@ export function User() {
           onPress={()=>
             
             navigation.navigate('feedDetails',{feedId: item.id})}
-          >
+          ><LinearGradient
+          colors={['#fff', '#fff']}
+          style={{
+          marginRight:10,
+          marginLeft:10,
+          borderColor: 'rgba(255,255,255,0.3)',
+          borderRadius: 20,
+          borderWidth: 2}}
+        >
           <Image 
           style={{width: 150, height: 150,borderRadius:10}}
-          marginLeft={4}
-          marginRight={4}
+          
           alt="imagem"
           source={{ uri : item.image }} />
-          
+          </LinearGradient>
           </TouchableOpacity>
           
           
@@ -115,8 +129,8 @@ export function User() {
         )}
      
       />
-      </HStack>
       
+      </BlurView>
     </VStack>
   
   );

@@ -7,7 +7,7 @@ import { useNavigation, useRoute } from '@react-navigation/native';
 
 import { Loading } from '../components/Loading';
 
-import { HeaderFeed } from '../components/headerFeed';
+import { HeaderFeed } from '../components/HeaderFeed';
 import { FooterBar } from '../components/FooterBar';
 
 export function Feed() {
